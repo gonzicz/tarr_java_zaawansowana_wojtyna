@@ -7,7 +7,7 @@ package samochódDoGierki;
 // klasa Track służy do stworzenia toru po której przemieszczają się auta
 public class Track {
     private Car[] cars;     // deklaracja tablicy, któa może zawierać samochody, jeśli na pozycji jest null to na tej
-                            // pozycji nie ma samochodu, a jeśli nie jest nulll to znajduje się tam samochód
+    // pozycji nie ma samochodu, a jeśli nie jest nulll to znajduje się tam samochód
 
     public Track(int size) {            // konstruktor toru, który tworzy tor o podanej długości
         this.cars = new Car[size];      // alokacja pamięci na tablicę o rozmiarze size, wszystkie elementy tablicy domyślnie są null
@@ -15,15 +15,15 @@ public class Track {
 
     @Override   // implementacja zamiany tor na stringa w celu przedstawiwnia jej graficznie
     public String toString() {
-        String viewCar = "";
+        StringBuilder viewBuilder = new StringBuilder();
         for (int i = 0; i < cars.length; i++) {
             if (cars[i] == null) {
-                viewCar += "_";
+                viewBuilder.append("_");
             } else {
-                viewCar += "C";
+                viewBuilder.append("C");
             }
         }
-        return viewCar;
+        return viewBuilder.toString();
     }
 
     // metoda ustawiająca nam samochód na danej pozycji
