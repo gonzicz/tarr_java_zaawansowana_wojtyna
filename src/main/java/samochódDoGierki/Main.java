@@ -1,5 +1,5 @@
 package samochódDoGierki;
-
+//ctrl+Q
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Track tor1 = new Track(100);       // utworzenie nowego toru o rozmiarze 100 (100 pozycji),
