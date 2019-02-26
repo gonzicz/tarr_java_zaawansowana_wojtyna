@@ -1,7 +1,6 @@
 package samochódDoGierki;
 
-public class Car
-{
+public class Car {
     private String color;
     private Wheel[] kola;
     private Engine silnik;
@@ -9,22 +8,20 @@ public class Car
     private Track track;
     private int position;
 
-    public Car(Track track, int position)
-    {
+    public Car(Track track, int position) {
         this.track = track;
         this.position = position;
         track.setCarAt(position, this);
     }
 
-    public void move(int distance)
-    {
+    public void move(int distance) {
         int newPosition = position + distance;
-        if(track.isCarAt(newPosition)){
+        if (track.isCarAt(newPosition)) {
             System.out.println("\nBOOM!!!!!");
             track.setCarAt(position, null);
             track.setCarAt(newPosition, null);
         } else {
-            System.out.printf("\nSamochód został przestawiony z pozycji %d na pozycję %d",
+            System.out.printf("Samochód został przestawiony z pozycji %d na pozycję %d\n",
                     position, newPosition);
             track.setCarAt(position, null);
             track.setCarAt(newPosition, this);

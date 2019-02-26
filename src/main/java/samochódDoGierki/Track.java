@@ -11,6 +11,19 @@ public class Track {
         this.cars = new Car[size];
     }
 
+    @Override
+    public String toString() {
+        String viewCar = "";
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i] == null) {
+                viewCar += "_";
+            } else {
+                viewCar +="C";
+            }
+        }
+        return viewCar;
+    }
+
     public void setCarAt(int position, Car car) {
         cars[position] = car;
     }
